@@ -27,7 +27,7 @@
 using ChristianGreiner.Duality.Plugins.GrabBag.Helpers;
 using Duality;
 
-namespace ChristianGreiner.Duality.Plugins.GrabBag.Utility
+namespace ChristianGreiner.Duality.Plugins.GrabBag.Math
 {
     /// <summary>
     /// The class that provides common interpolation patterns for a value in a range.

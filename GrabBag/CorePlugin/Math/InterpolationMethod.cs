@@ -24,7 +24,7 @@
     FROM: https://github.com/impworks/corund
 */
 
-namespace ChristianGreiner.Duality.Plugins.GrabBag.Utility
+namespace ChristianGreiner.Duality.Plugins.GrabBag.Math
 {
     /// <summary>
     /// The interface for all tweening methods.

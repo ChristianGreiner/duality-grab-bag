@@ -33,13 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Collections\FastList.cs" />
+    <Compile Include="Collections\ListPool.cs" />
     <Compile Include="Components\Graphics\OverlayRenderer.cs" />
     <Compile Include="CorePlugin.cs" />
     <Compile Include="Drawing\Colors.cs" />
     <Compile Include="Helpers\NumericHelper.cs" />
+    <Compile Include="Math\Axis.cs" />
+    <Compile Include="Math\Bezier.cs" />
+    <Compile Include="Math\BezierSpline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\Interpolation.cs" />
-    <Compile Include="Utility\InterpolationMethod.cs" />
+    <Compile Include="Math\Interpolation.cs" />
+    <Compile Include="Math\InterpolationMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Duality, Version=2.13.3.0, Culture=neutral, processorArchitecture=MSIL">

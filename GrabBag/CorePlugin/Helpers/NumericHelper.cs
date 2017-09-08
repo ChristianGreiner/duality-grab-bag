@@ -24,7 +24,6 @@
     FROM: https://github.com/impworks/corund
 */
 
-using System;
 using Duality;
 
 namespace ChristianGreiner.Duality.Plugins.GrabBag.Helpers
@@ -57,6 +56,21 @@ namespace ChristianGreiner.Duality.Plugins.GrabBag.Helpers
             return (number <= compareTo + precision) && (number >= compareTo - precision);
         }
 
+        /// <summary>
+        /// clamps value between 0 and 1
+        /// </summary>
+        /// <param name="value">Value.</param>
+        public static float Clamp01(float value)
+        {
+            if (value < 0f)
+                return 0f;
+
+            if (value > 1f)
+                return 1f;
+
+            return value;
+        }
+
         public static float CurveAngle(float from, float to, float step)
         {
             // http://circlessuck.blogspot.de/2012/07/xna-smooth-sprite-rotation.html
@@ -64,12 +78,12 @@ namespace ChristianGreiner.Duality.Plugins.GrabBag.Helpers
             if (step == 0) return from;
             if (from == to || step == 1) return to;
 
-            Vector2 fromVector = new Vector2((float)Math.Cos(from), (float)Math.Sin(from));
-            Vector2 toVector = new Vector2((float)Math.Cos(to), (float)Math.Sin(to));
+            Vector2 fromVector = new Vector2(MathF.Cos(from), MathF.Sin(from));
+            Vector2 toVector = new Vector2(MathF.Cos(to), MathF.Sin(to));
 
             Vector2 currentVector = Slerp(fromVector, toVector, step);
 
-            var result = (float)Math.Atan2(currentVector.Y, currentVector.X);
+            var result = MathF.Atan2(currentVector.Y, currentVector.X);
 
             if (float.IsNaN(result))
                 return 0;
@@ -79,14 +93,14 @@ namespace ChristianGreiner.Duality.Plugins.GrabBag.Helpers
 
         private static Vector2 Slerp(Vector2 from, Vector2 to, float step)
         {
-            if (step == 0) return from;
+            if (step == 0.0f) return from;
             if (from == to || step == 1) return to;
 
-            double theta = Math.Acos(Vector2.Dot(from, to));
-            if (theta == 0) return to;
+            var theta = MathF.Acos(Vector2.Dot(from, to));
+            if (theta == 0.0f) return to;
 
-            double sinTheta = Math.Sin(theta);
-            return (float)(Math.Sin((1 - step) * theta) / sinTheta) * from + (float)(Math.Sin(step * theta) / sinTheta) * to;
+            var sinTheta = MathF.Sin(theta);
+            return (MathF.Sin((1 - step) * theta) / sinTheta) * from + MathF.Sin(step * theta) / sinTheta * to;
         }
     }
 }
