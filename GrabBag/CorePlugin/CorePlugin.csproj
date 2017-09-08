@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="Components\Graphics\OverlayRenderer.cs" />
     <Compile Include="CorePlugin.cs" />
+    <Compile Include="Drawing\Colors.cs" />
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\Interpolation.cs" />
