@@ -24,6 +24,9 @@
     FROM: https://github.com/impworks/corund
 */
 
+using System;
+using Duality;
+
 namespace ChristianGreiner.Duality.Plugins.GrabBag.Helpers
 {
     public static class NumericHelper
@@ -52,6 +55,38 @@ namespace ChristianGreiner.Duality.Plugins.GrabBag.Helpers
         public static bool IsAlmost(this float number, float compareTo, float precision = Epsilon)
         {
             return (number <= compareTo + precision) && (number >= compareTo - precision);
+        }
+
+        public static float CurveAngle(float from, float to, float step)
+        {
+            // http://circlessuck.blogspot.de/2012/07/xna-smooth-sprite-rotation.html
+
+            if (step == 0) return from;
+            if (from == to || step == 1) return to;
+
+            Vector2 fromVector = new Vector2((float)Math.Cos(from), (float)Math.Sin(from));
+            Vector2 toVector = new Vector2((float)Math.Cos(to), (float)Math.Sin(to));
+
+            Vector2 currentVector = Slerp(fromVector, toVector, step);
+
+            var result = (float)Math.Atan2(currentVector.Y, currentVector.X);
+
+            if (float.IsNaN(result))
+                return 0;
+
+            return result;
+        }
+
+        private static Vector2 Slerp(Vector2 from, Vector2 to, float step)
+        {
+            if (step == 0) return from;
+            if (from == to || step == 1) return to;
+
+            double theta = Math.Acos(Vector2.Dot(from, to));
+            if (theta == 0) return to;
+
+            double sinTheta = Math.Sin(theta);
+            return (float)(Math.Sin((1 - step) * theta) / sinTheta) * from + (float)(Math.Sin(step * theta) / sinTheta) * to;
         }
     }
 }
