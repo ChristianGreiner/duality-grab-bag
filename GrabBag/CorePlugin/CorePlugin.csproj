@@ -8,7 +8,7 @@
     <ProjectGuid>{08763984-9B71-48FA-A40D-C92E67B1ED25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>ChristianGreiner.Duality.Plugins.GrabBag</RootNamespace>
-    <AssemblyName>GrabBag.cor</AssemblyName>
+    <AssemblyName>GrabBag.core</AssemblyName>
     <DefaultLanguage>de-DE</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
