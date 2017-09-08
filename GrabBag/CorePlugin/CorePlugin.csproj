@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AI\BehaviorTree\BehaviorExtensions.cs" />
+    <Compile Include="AI\BehaviorTree\BehaviorInvokationEventArgs.cs" />
+    <Compile Include="AI\BehaviorTree\BehaviorResult.cs" />
+    <Compile Include="AI\BehaviorTree\BehaviorTreeBuilder.cs" />
+    <Compile Include="AI\BehaviorTree\Composites\IComposite.cs" />
+    <Compile Include="AI\BehaviorTree\Composites\Selector.cs" />
+    <Compile Include="AI\BehaviorTree\Composites\Sequence.cs" />
+    <Compile Include="AI\BehaviorTree\Decorators\DebugDecorator.cs" />
+    <Compile Include="AI\BehaviorTree\Decorators\FluentDecoratorFactory.cs" />
+    <Compile Include="AI\BehaviorTree\Decorators\IDecorator.cs" />
+    <Compile Include="AI\BehaviorTree\Decorators\Inverter.cs" />
+    <Compile Include="AI\BehaviorTree\Decorators\RepeatUntilFailure.cs" />
+    <Compile Include="AI\BehaviorTree\Decorators\RepeatUntilSuccess.cs" />
+    <Compile Include="AI\BehaviorTree\Decorators\Succeeder.cs" />
+    <Compile Include="AI\BehaviorTree\IBehaviorNode.cs" />
+    <Compile Include="AI\BehaviorTree\Leaves\Behavior.cs" />
+    <Compile Include="AI\BehaviorTree\Leaves\ILeaf.cs" />
+    <Compile Include="AI\BehaviorTree\Leaves\Question.cs" />
     <Compile Include="Collections\FastList.cs" />
     <Compile Include="Collections\ListPool.cs" />
     <Compile Include="Components\Graphics\OverlayRenderer.cs" />
@@ -42,6 +60,7 @@
     <Compile Include="Math\Axis.cs" />
     <Compile Include="Math\Bezier.cs" />
     <Compile Include="Math\BezierSpline.cs" />
+    <Compile Include="Math\Noise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Math\Interpolation.cs" />
     <Compile Include="Math\InterpolationMethod.cs" />
