@@ -74,6 +74,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Math\Interpolation.cs" />
     <Compile Include="Math\InterpolationMethod.cs" />
+    <Compile Include="Timer\ContinuousClock.cs" />
+    <Compile Include="Timer\CountdownTimer.cs" />
+    <Compile Include="Timer\GameTimer.cs" />
+    <Compile Include="Timer\TimerState.cs" />
     <Compile Include="Tweens\ColorTween.cs" />
     <Compile Include="Tweens\Easing.cs" />
     <Compile Include="Tweens\FloatTween.cs" />
