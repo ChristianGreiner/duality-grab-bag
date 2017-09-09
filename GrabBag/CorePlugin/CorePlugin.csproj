@@ -69,7 +69,8 @@
     <Compile Include="Math\Geometry\Containment.cs" />
     <Compile Include="Math\Geometry\Line.cs" />
     <Compile Include="Math\Geometry\LineSegment.cs" />
-    <Compile Include="Math\Noise.cs" />
+    <Compile Include="Noises\PerlinNoise.cs" />
+    <Compile Include="Noises\SimplexNoise.cs" />
     <Compile Include="Math\Geometry\Ray2D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Math\Interpolation.cs" />
