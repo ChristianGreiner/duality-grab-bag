@@ -24,10 +24,10 @@
     FROM https://github.com/prime31/Nez
 */
 
+using Duality;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Duality;
 
 namespace ChristianGreiner.Duality.Plugins.GrabBag.Collections
 {

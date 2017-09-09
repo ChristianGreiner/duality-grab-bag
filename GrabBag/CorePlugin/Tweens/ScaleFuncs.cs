@@ -163,7 +163,7 @@ namespace ChristianGreiner.Duality.Plugins.GrabBag.Tweens
 
         private static float EaseInPower(float progress, int power)
         {
-            return (float)MathF.Pow(progress, power);
+            return MathF.Pow(progress, power);
         }
 
         private static float EaseOutPower(float progress, int power)

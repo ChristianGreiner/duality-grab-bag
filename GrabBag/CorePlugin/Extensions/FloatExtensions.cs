@@ -1,0 +1,48 @@
+﻿using Duality;
+using System.Diagnostics.Contracts;
+
+namespace ChristianGreiner.Duality.Plugins.GrabBag.Extensions
+{
+    /// <summary> Extension methods for <see cref="float" />. </summary>
+    internal static class FloatExtensions
+    {
+        internal const float Tolerance = 0.0001f;
+
+        /// <summary> Test to see if a value equals zero using epsilon. </summary>
+        /// <param name="self">The value to test.</param>
+        /// <param name="epsilon">The epsilon.</param>
+        /// <returns>True if value nearly equals zero, false otherwise.</returns>
+        [Pure]
+        public static bool EqualsZero(this float self, float epsilon = Tolerance)
+        {
+            return NearlyEquals(self, 0f, epsilon);
+        }
+
+        /// <summary> Checks if two values are considered equal using given absolute epsilon. </summary>
+        /// <remarks>
+        ///     Good article about floating point comparisons:
+        ///     https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/
+        /// </remarks>
+        /// <param name="a">The first value.</param>
+        /// <param name="b">The second value.</param>
+        /// <param name="epsilon">The epsilon used for absolute tolerance.</param>
+        /// <returns>
+        ///     True if values are considered equal to each other, false otherwise.
+        /// </returns>
+        [Pure]
+        public static bool NearlyEquals(this float a, float b, float epsilon = Tolerance)
+        {
+            var diff = MathF.Abs(a - b);
+            return diff <= epsilon;
+        }
+
+        /// <summary> Finds only the fractional component of a number: always positive. </summary>
+        /// <param name="self">The number whose fractional component to get.</param>
+        /// <returns>The fractional component of a number: always positive.</returns>
+        public static float Frac(this float self)
+        {
+            float abs = MathF.Abs(self);
+            return abs - MathF.Floor(abs);
+        }
+    }
+}
